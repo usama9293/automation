@@ -1,0 +1,12 @@
+Navigated to the form.
+Entered "John" in the field with ID: RESULT_TextField-1
+Entered "Doe" in the field with ID: RESULT_TextField-2
+Entered "1234567890" in the field with ID: RESULT_TextField-4
+Entered "Pakistan" in the field with ID: RESULT_TextField-5
+Entered "Karachi" in the field with ID: RESULT_TextField-6
+Entered "usama@gmail.com" in the field with ID: RESULT_TextField-3
+Selected 'Male' radio button.
+Selected 'Monday' checkbox.
+Selected 'Morning' from Best Time dropdown.
+File uploaded successfully.
+Form submitted successfully!
