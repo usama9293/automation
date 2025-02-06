@@ -7,33 +7,41 @@ const { Builder, By, Key } = require("selenium-webdriver");
     await driver.get("https://money.rediff.com/gainers");
 
     // Click on the element using self axis
-    await driver
+    let element = await driver
       .findElement(
-        By.xpath("//a[normalize-space()='Vrundavan Plantation']/self::a")
-      )
-      .click();
-
-    // Get the parent node (td)
-
-    // Get all child nodes
-    let childNodes = await driver.findElements(
-      By.xpath(
-        "//a[normalize-space()='Vrundavan Plantation']/ancestor::tr/child::*"
-      )
-    );
-
-    console.log("🔹 Number of Child Nodes:", childNodes.length);
-
-    await driver.sleep(3000);
-
-    // Get ancestor (tr)
-    let ancestor = await driver
-      .findElement(
-        By.xpath("//a[normalize-space()='Vrundavan Plantation']/ancestor::tr")
+        By.xpath("//a[normalize-space()='Diffusion Engineers']/self::a")
       )
       .getText();
 
-    console.log("🔹 Ancestor Row Text:", ancestor);
+    console.log("element", element);
+    let parent = await driver
+      .findElement(
+        By.xpath("//a[normalize-space()='Diffusion Engineers']/parent::td")
+      )
+      .getText();
+
+    console.log("parent", parent);
+
+    //child size
+    let childElements = await driver.findElements(
+      By.xpath(
+        "//a[normalize-space()='Diffusion Engineers']/ancestor::tr/child::*"
+      )
+    );
+
+    console.log("Number of child elements:", childElements.length);
+
+    //ancestor node texts
+
+    let ancestor = await driver
+      .findElement(
+        By.xpath("//a[normalize-space()='Diffusion Engineers']/ancestor::tr")
+      )
+      .getText();
+
+    console.log("ancestor", ancestor);
+
+    // Get the parent node (td)
   } catch (error) {
     console.error("❌ Test Failed:", error);
   } finally {
